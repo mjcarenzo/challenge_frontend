@@ -4,13 +4,13 @@
         <h4 class="title">NYTimes Books</h4>
       </div>
       <div class="search">
-        <input type="text" class="form-control" placeholder="Search by title" (click)="loadListOfBooks()"/>
+        <input type="text" class="form-control" placeholder="Search by title" [disabled]="true"/>
       </div>
       <div class="content">
         <!-- ADD CONTENT HERE -->
         <ul>
-          <li *ngFor="let name of listOfBook">
-            <button>{{ name.display_name }}</button>
+          <li *ngFor="let category of listOfCategories">
+            <button>{{ category.list_name }}</button>
           </li>
         </ul>
       </div>

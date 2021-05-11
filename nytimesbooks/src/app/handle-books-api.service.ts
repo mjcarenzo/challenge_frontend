@@ -11,7 +11,7 @@ export class HandleBooksApiService {
   constructor(private http: HttpClient) { }
 
   getBooks(){
-    const url = 'https://api.nytimes.com/svc/books/v3/lists/names.json?offset=10&api-key=' + this.apiKey;
+    const url = 'https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=' + this.apiKey;
     return this.http.get<any>(url);
   }
  

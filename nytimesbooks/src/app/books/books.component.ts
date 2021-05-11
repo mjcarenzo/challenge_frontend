@@ -8,16 +8,15 @@ import { HandleBooksApiService } from '../handle-books-api.service';
 })
 export class BooksComponent implements OnInit{
   
-  listOfBook:any = [];
+  listOfCategories:any = [];
   constructor(private service: HandleBooksApiService) {}
 
   ngOnInit(): void {
-
+    this.listOfCategories = this.loadListOfCategories();
+    console.log(this.listOfCategories);
   }
 
-  loadListOfBooks(){
-    return this.service.getBooks().subscribe(response => this.listOfBook = response.results);
+  loadListOfCategories(){
+    this.service.getBooks().subscribe(response => this.listOfCategories = response.results);
   }
-
-  
 }
