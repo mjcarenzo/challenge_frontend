@@ -12,11 +12,12 @@ export class BooksComponent implements OnInit{
   constructor(private service: HandleBooksApiService) {}
 
   ngOnInit(): void {
-    this.listOfCategories = this.loadListOfCategories();
-    console.log(this.listOfCategories);
+    this.loadListOfCategories();
+    
   }
 
   loadListOfCategories(){
-    this.service.getBooks().subscribe(response => this.listOfCategories = response.results);
+    this.service.getBooks().subscribe(response => this.listOfCategories = response.results.slice(0,10));
   }
+
 }
